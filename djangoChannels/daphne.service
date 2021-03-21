@@ -1,0 +1,13 @@
+[Unit]
+Description=daphne server script for my project
+After=network.target
+
+[Service]
+User=nobody
+Group=nogroup
+WorkingDirectory=/home/esanga/PycharmProjects/djangoChannel
+ExecStart=/home/esanga/.virtualenvs/djangoChannels/bin/daphne -b localhost -p 80 djangoChannels.asgi:application
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

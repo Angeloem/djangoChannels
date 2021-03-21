@@ -1,0 +1,13 @@
+[Unit]
+Description=python runworker server for myproject
+After=network.target
+
+[Service]
+User=nobody
+Group=nogroup
+WorkingDirectory=/path/to/myproject
+ExecStart=/home/esanga/.virtualenvs/djangoChannels/bin/python /home/esanga/PycharmProjects/djangoChannels/manage.py runworker --threads 4
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
